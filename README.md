@@ -136,13 +136,13 @@ You can set your social links in `_data/social.yml`. You can custom titles, URLs
 
 ```yml
 - title: Email
-  url: mailto://vszhub@gmail.com
+  url: mailto://mukho@kakao.com
   icon: fas fa-envelope
-- title: Twitter
-  url: https://twitter.com/vszhub
-  icon: fab fa-twitter
+- title: instagram
+  url: https://instagram.com/itsmemukho
+  icon: fab fa-instagram
 - title: GitHub
-  url: https://github.com/vszhub/not-pure-poole
+  url: https://github.com/mukholisk/mukholisk.github.io
   icon: fab fa-github
 ```
 
