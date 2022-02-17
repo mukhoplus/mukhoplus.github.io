@@ -1,10 +1,12 @@
 ---
 layout: post
 title: Testing MathJax
-tags: mathjax
+tags: [mathjax, text]
 math: true
-date: 2020-10-02 15:32 +0800
+date: 2022-02-17 20:34 +0900
 ---
+저는 수학을 싫어하는 "문과" 출신이니까 건들지 않겠습니다~
+
 Not Pure Poole supports [MathJax](https://www.mathjax.org/). You can enable it on a page by setting `math: true` in the front matter.
 
 An inline math: \\\(E=mc^2\\\).
