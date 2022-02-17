@@ -22,7 +22,7 @@ $$
 <script src="https://utteranc.es/client.js"
         repo="mukholisk/mukholisk.github.io"
         issue-term="pathname"
-        theme="dark-blue"
+        theme="github-light"
         crossorigin="anonymous"
         async>
 </script>
