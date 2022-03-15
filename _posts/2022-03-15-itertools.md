@@ -9,8 +9,6 @@ toc:  true
 알고리즘을 풀다 조합 또는 수열을 만들거나, 그것 형식의 결과값을 만들어야 하는 문제를 만났습니다.<br>
 Backtracking을 통해 풀 수 있으나, itertools를 사용하면 쉽게 해결할 수 있다기에 공부해보았습니다.<br>
 
-from itertools import combinations, combinations_with_replacement, product
-
 ```python
 '''
 itertools 라이브러리로 조합과 수열을 구해보겠습니다.
@@ -21,6 +19,8 @@ itertools 라이브러리로 조합과 수열을 구해보겠습니다.
 짝지어지는 경우
     (중복)순열: product
 '''
+from itertools import combinations, combinations_with_replacement, product
+
 lst = [1, 2, 3]
 
 # combinations(iterable, r): iterable에서 원소 개수가 r개인 조합 뽑기(중복x)
