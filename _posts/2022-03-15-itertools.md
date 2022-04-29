@@ -2,7 +2,7 @@
 layout: post
 title: itertools
 date: 2022-03-15 12:23 +0000
-last_modified_at: 2022-03-15 12:23 +0000
+last_modified_at: 2022-04-29 23:09:22 +0000
 tags: [코딩테스트, Python]
 toc:  true
 ---
@@ -18,15 +18,16 @@ itertools 라이브러리로 조합과 수열을 구해보겠습니다.
     조합: combinations
     중복조합: combinations_with_replacement
 짝지어지는 경우
-    (중복)순열: product
+    순열: permutations
+    중복순열: product
 '''
-from itertools import combinations, combinations_with_replacement, product
+from itertools import combinations, combinations_with_replacement, permutations, product
 
-lst = [1, 2, 3]
+lst = [1, 2]
 
 # combinations(iterable, r): iterable에서 원소 개수가 r개인 조합 뽑기(중복x)
 for n in range(1, len(lst)+1):
-    if n == 3:
+    if n == 2:
         print('-----------')
     for i in combinations(lst, n):
         i = list(i)
@@ -35,16 +36,25 @@ for n in range(1, len(lst)+1):
 print('===========')
 # combinations_with_replacement(iterable, r): iterable에서 원소 개수가 r개인 중복조합 뽑기
 for n in range(1, len(lst)+1):
-    if n == 3:
+    if n == 2:
         print('-----------')
     for i in combinations_with_replacement(lst, n):
         i = list(i)
         print(i)
 
 print('===========')
+# permutations(iterable, r): iterable에서 원소 개수가 r개인 순열 뽑기(중복x)
+for n in range(1, len(lst)+1):
+    if n == 2:
+        print('-----------')
+    for i in permutations(lst, n):
+        i = list(i)
+        print(i)
+
+print('===========')
 # product(*iterables, repeat=1): 여러 iterable을 넣어줄 수 있고, repeat의 인자만큼 그것들의 모든 짝을 지어서 반환함
 for n in range(1, len(lst)+1):
-    if n == 3:
+    if n == 2:
         print('-----------')
     for i in product(lst, repeat=n):
         i = list(i)
@@ -54,6 +64,7 @@ for n in range(1, len(lst)+1):
 itertools
     combinations: [1] [2] [1, 2]
     combinations_with_replacement: [1] [2] [1, 1] [1, 2] [2, 1]
+    permutations: [1] [2] [1, 2] [2, 1]
     product: [1] [2] [1, 1] [1, 2] [2, 1] [2, 2]
 '''
 ```
