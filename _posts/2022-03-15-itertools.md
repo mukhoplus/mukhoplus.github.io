@@ -63,7 +63,7 @@ for n in range(1, len(lst)+1):
 '''
 itertools
     combinations: [1] [2] [1, 2]
-    combinations_with_replacement: [1] [2] [1, 1] [1, 2] [2, 1]
+    combinations_with_replacement: [1] [2] [1, 1] [1, 2] [2, 2]
     permutations: [1] [2] [1, 2] [2, 1]
     product: [1] [2] [1, 1] [1, 2] [2, 1] [2, 2]
 '''
