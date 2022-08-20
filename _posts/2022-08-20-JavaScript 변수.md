@@ -21,7 +21,9 @@ toc:  true
     1. var : 변수를 선언. 추가로 동시에 값을 초기화.
     2. let : 블록 스코프 지역 변수를 선언, 추가로 동시에 값을 초기화.
     3. const : 블록 스코프 읽기 전용 상수를 선언.
+    
 <br><br>
+
 ## 변수 선언
 
 변수 선언은 아래 3가지 방법으로 가능합니다.
@@ -62,6 +64,7 @@ toc:  true
         console.log(b); // 5
         ```
 <br><br>
+
 ## 변수 할당
 
 - 지정된 초기 값 없이 var 또는 let 문을 사용해서 선언된 변수는 ``undefined`` 값을 가집니다. 선언되지 않는 변수에 접근을 시도하는 경우 ``ReferenceError`` 예외가 발생합니다.
@@ -83,6 +86,7 @@ console.log('y 값은 ' + y); // Uncaught ReferenceError: y is not defined
 let y;
 ```
 <br><br>
+
 ## 호이스팅
 
 위 예제 코드에서 선언되지 않은 var 변수 b에 먼저 접근했을 때 undefined가 출력되지만, 선언되지 않은 let 변수 y에 먼저 접근했을 때는 ReferenceError 예외가 발생했습니다.
