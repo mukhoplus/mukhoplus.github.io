@@ -1,8 +1,8 @@
 ---
 layout: post
 title: JavaScript 변수
-date: 2022-08-20 16:20 +0000
-last_modified_at: 2022-08-20 21:52:25 +0000
+date: 2022-08-20 16:20:04
+last_modified_at: 2022-08-20 21:52:25
 tags: [자바스크립트, CS]
 toc:  true
 ---
@@ -21,7 +21,7 @@ toc:  true
     1. var : 변수를 선언. 추가로 동시에 값을 초기화.
     2. let : 블록 스코프 지역 변수를 선언, 추가로 동시에 값을 초기화.
     3. const : 블록 스코프 읽기 전용 상수를 선언.
-    
+
 <br><br>
 
 ## 변수 선언
