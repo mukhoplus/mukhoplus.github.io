@@ -1,8 +1,8 @@
 ---
 layout: post
 title: JavaScript 변수
-date: 2022-08-20 16:20:04
-last_modified_at: 2022-08-20 21:52:25
+date: 2022-08-20 16:20:04 +09:00
+last_modified_at: 2022-08-20 21:52:25 +09:00
 tags: [자바스크립트, CS]
 toc:  true
 ---
