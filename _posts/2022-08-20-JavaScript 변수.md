@@ -1,6 +1,7 @@
 ---
 layout: post
 title: JavaScript 변수
+excerpt: 자바스크립트의 변수에 관해 정리해보았습니다.
 date: 2022-08-20 16:20:04 +0900
 last_modified_at: 2022-08-20 21:52:25 +0900
 tags: [자바스크립트, CS]
