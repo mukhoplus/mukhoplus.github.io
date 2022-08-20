@@ -4,6 +4,7 @@ title: "[JavaScript] var, let, const"
 excerpt: "자바스크립트의 변수에 관한 내용을 정리해보았습니다."
 date: 2022-08-20 16:20 +0000
 last_modified_at: 2022-08-20 16:20:04 +0000
+categories: CS
 tags: [자바스크립트, CS]
 toc:  true
 ---
