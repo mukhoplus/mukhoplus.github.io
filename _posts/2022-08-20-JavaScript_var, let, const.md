@@ -1,6 +1,6 @@
 ---
 layout: post
-title: JavaScript - var, let, const
+title: JavaScript_var, let, const
 date: 2022-08-20 16:20 +0000
 last_modified_at: 2022-08-20 16:20:04 +0000
 tags: [자바스크립트, CS]
