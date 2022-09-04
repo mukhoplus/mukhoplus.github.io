@@ -52,7 +52,51 @@ toc:  true
     - 단순한 개발툴과 기본적인 개발환경으로도 엔터프라이즈 개발에서 필요로 하는 '주요한 기능을 갖춘 애플리케이션'을 개발하기에 충분합니다.
 6. 이외에도 트랜잭션 관리, API와의 영속성 지원(JDBC, JPA 등) 등을 한다는 특징이 있습니다.
 
+## Spring MVC
+
+스프링 MVC는 스프링에서 제공하는 웹 모듈로, ``Model, View, Controller`` 세 가지 구성요소를 사용해 **사용자의 다양한 HTTP Request를 처리하고 단순한 텍스트 형식의 응답으로부터 REST 형식의 응답은 물론 View를 표시하는 HTML을 반환하는 응답까지 다양한 응답을 할 수 있도록 하는 프레임워크**입니다.<br>
+스프링 MVC는 다양한 요청을 처리하고 응답하기 위해 주요 구성요소들을 만들어 놓고 구성요소들을 확장할 수 있게 만들어 놓는데, 이를 제대로 사용하기 위해서는 MVC가 어떻게 구성되어 있는지를 알아야 합니다.
+
+## Spring MVC의 구조
+
+스프링 MVC의 주요 구성요소는 ``Model``, ``View``, ``Controller``지만, 이들이 유기적으로 동작하도록 하기 위해 다양한 구성요소가 함께합니다.
+![image](https://user-images.githubusercontent.com/67003627/188314455-682bb8f5-9633-4b3b-bcac-f5b15574a055.png)
+
+- DispatcherServlet(Front Controller)
+    - 제일 앞단에서 HTTP Request를 처리하는 **Controller**입니다.
+    - 스프링 MVC에서는 HTTP Request가 오면 DispatcherServlet이라 불리는 서블릿이 HTTP Request를 처리할 Controller를 지정합니다.
+    - ``DispatcherServlet``은 일종의 HTTP Request를 처리할 Controller를 지정하는 Controller로, Super Controller 역할을 합니다.
+- Handler(Controller)
+    - HTTP Request를 처리해 Model을 만들고 View를 지정합니다.
+    - DispatcherServlet에 의해 배정된 Controller는 HTTP Request를 처리하고, HTTP Request의 메세지를 처리해 필요한 데이터를 뽑아 Model에 저장합니다.
+    - HTTP Request에 따라서 HTTP가 보여줄 View Name을 지정합니다. 이곳에서 View Name을 지정하는 것 뿐만 아니라 직접 View를 반환할 수도 있습니다. 하지만 이곳에서 View에 Model의 데이터를 세팅하지는 않습니다.
+- ModelAndView
+    - Controller에 의해 반환된 Model과 View가 Wrapping된 객체입니다.
+    ```java
+    public ModelAndView(String viewName, @Nullable Map<String, ?> model){
+        this.view = viewName;
+        if(model != null){
+            getModelMap().addAllAttributes(model);
+        }
+    }
+    ```
+    - Model: Map<String, Value> 형태의 데이터 저장소로, HTTP Request 속의 데이터를 파싱해 Key-Value 쌍으로 만들어 저장합니다. 이 Model은 이후에 View를 그리기 위해 사용합니다.
+    - View, ViewName: ViewResolver에서 그릴 View를 지정합니다.
+    - ModelAndView 내부에는 View 또는 ViewName이 있는데, View가 지정되더라도 데이터가 세팅된 View가 지정되지 않습니다.
+
+- ViewResolver
+    - ModelAndView 객체를 처리해 View를 그립니다. 여기서는 Model에 저장된 데이터를 사용해 View를 그립니다.
+    - View는 사용자에게 보여줄 완성된 View이며, 여기서 그려지는 View는 그대로 유저에게 반환됩니다.
+    - 특정한 URL로 들어갔을 때 우리에게 보여지는 View가 바로 이곳에서 만들어지는 View입니다.
+
+## Spring MVC의 의의
+
+- Spring MVC는 웹 애플리케이션을 유연하고 확장 가능하게 만들어줍니다.
+- Spring MVC는 HTTP Request를 처리하는 부분인 **Controller**, 데이터를 처리해 정제된 데이터를 넣는 **Model**, 정제된 데이터를 활용해 사용자에게 보여지는 **View**에 대한 역할 분리를 잘 해놓았습니다.
+- 이를 사용하면 Model, View, Controller 모두를 인터페이스를 사용해 규격화하여 유연하고 확장성있게 웹 애플리케이션을 설계할 수 있습니다.
+
 ## 참고
 
 - [스프링 프레임워크란?](https://steady-coding.tistory.com/457)
 - [제어의 역전이 뭐임](https://maro-matta.tistory.com/entry/%EC%A0%9C%EC%96%B4%EC%9D%98-%EC%97%AD%EC%A0%84%EC%9D%B4-%EB%AD%90%EC%9E%84-Inversion-of-Control)
+- [Spring MVC Framework란 무엇인가? Spring MVC의 구조와 의의](https://kotlinworld.com/326)
