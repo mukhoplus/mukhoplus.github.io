@@ -10,7 +10,7 @@
 >
 > -- <a href="https://www.bbc.co.uk/bitesize/guides/zbtjnrd/revision/6"><cite>The death of Jekyll</cite></a>
 
------
+---
 
 See Not Pure Poole in action with [the demo site](https://vszhub.github.io/not-pure-poole/).
 
